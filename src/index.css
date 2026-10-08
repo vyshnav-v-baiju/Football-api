@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('/fonts/icomoon.eot');
+  src: url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/icomoon.ttf') format('truetype'),
+       url('/fonts/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Flaticon';
+  src: url('/fonts/Flaticon.eot');
+  src: url('/fonts/Flaticon.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/Flaticon.woff2') format('woff2'),
+       url('/fonts/Flaticon.woff') format('woff'),
+       url('/fonts/Flaticon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: rgba(255,255,255,.65);
+  background: #222831;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  line-height: 1.7;
+  color: gray;
+  font-weight: 300;
+  background: #222831;
+  font-size: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+img { display: block; max-width: 100%; }
+/* a { color: inherit; text-decoration: none; transition: .3s all ease; } */
+button, input, textarea, select { font: inherit; }
+h1,h2,h3,h4,h5,h6 { font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #fff; }
+
+.icon-heart::before { content: '\f004'; }
+.icon-play::before { content: '\f04b'; }
+.icon-arrow_back::before { content: '\e5c4'; }
+.icon-arrow_forward::before { content: '\e5c8'; }
+.icon-close2::before { content: '\e5cd'; }
+.icon-keyboard_arrow_left::before { content: '\e314'; }
+.icon-keyboard_arrow_right::before { content: '\e315'; }
+.icon-menu::before { content: '\e5d2'; }
+[class^='icon-'], [class*=' icon-'] {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: #000; color: #fff; }
+
+.container-page {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+@media (min-width: 576px) { .container-page { max-width: 540px; } }
+@media (min-width: 768px) { .container-page { max-width: 720px; } }
+@media (min-width: 992px) { .container-page { max-width: 960px; } }
+@media (min-width: 1200px) { .container-page { max-width: 1140px; } }
+
+/* Complex visual details retained from the original template. Layout is Tailwind-first. */
+.team-vs-skew::before {
+  content: '';
+  position: absolute;
+  background: #ee1e46;
+  left: -12%;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  transform: skew(-15deg);
+}
+
+.news-card-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  transition: .3s all ease;
+}
+.news-card:hover .news-card-overlay::before { background: rgba(0,0,0,.7); }
+.news-card:hover img { transform: scale(1.1); }
+.news-card:hover::before {
+  width: 100%;
+}
+.news-card::before {
+  content: '';
+  width: 0;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #ee1e46;
+  z-index: 4;
+  transition: .3s all ease;
+}
+
+.video-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.3);
+  z-index: 1;
+}
+
+.title-accent::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #ee1e46;
+}
+
+.video-play-ring::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ee1e46;
+  border-radius: 50%;
+}
+
+.footer-link:hover { color: #ee1e46; }
+
+.page-shell { overflow-x: hidden; }
+
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+
+/* Responsive safety rails */
+@media (max-width: 575.98px) {
+  .container-page { padding-inline: 16px; }
+  body { overflow-x: hidden; }
+}
+@media (max-width: 374px) {
+  .container-page { padding-inline: 12px; }
+}
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .container-page { max-width: 720px; }
+}
+/* Header links stay white on every page/state. */
+header nav a,
+header nav a:visited,
+header nav a:hover,
+header nav a:focus,
+header nav a:active { color: #fff !important; }
+
+
+
+
+/* for hero section  */
+
+
+
+/* =========================================
+   FIFA TICKET BUTTON
+========================================= */
+
+.ticket-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  min-width: 165px;
+  height: 52px;
+
+  padding: 0 23px;
+
+  overflow: hidden;
+
+  border: 2px solid #ffffff;
+  
+
+  background: #ffffff;
+  color: #222831;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Hover */
+.ticket-button:hover {
+  transform: translateY(-4px);
+
+  background: #ee1e46;
+  border-color: #ee1e46;
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 28px rgba(238, 30, 70, 0.35),
+    0 0 0 4px rgba(238, 30, 70, 0.08);
+}
+
+/* Click */
+.ticket-button:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
+/* Football inside button */
+.ticket-ball {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  font-size: 17px;
+
+  transition: transform 0.5s ease;
+}
+
+.ticket-button:hover .ticket-ball {
+  transform: rotate(180deg) scale(1.1);
+}
+
+/* Shine */
+.ticket-shine {
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+}
+
+.ticket-button:hover .ticket-shine {
+  animation: ticket-shine 0.8s ease;
+}
+
+@keyframes ticket-shine {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+
+/* =========================================
+   FIFA LOADING SCREEN
+========================================= */
+
+.ticket-loading-ball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 90px;
+  height: 90px;
+
+  font-size: 64px;
+
+  animation: football-spin 0.8s linear infinite;
+
+  filter: drop-shadow(
+    0 12px 25px rgba(0, 0, 0, 0.45)
+  );
+}
+
+@keyframes football-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Loading progress */
+.animate-loading-line {
+  animation: loading-line 1.5s ease-in-out forwards;
+}
+
+@keyframes loading-line {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .ticket-button {
+    min-width: 155px;
+    height: 48px;
+
+    padding: 0 18px;
+
+    font-size: 10px;
+  }
+
+  .ticket-ball {
+    font-size: 16px;
+  }
+
+  .ticket-loading-ball {
+    width: 75px;
+    height: 75px;
+
+    font-size: 52px;
+  }
+}
+
+
+/* hero section ends  */
